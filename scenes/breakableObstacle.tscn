@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bd2tn2m4t027h"]
+
+[ext_resource type="Script" uid="uid://cs5862nrmo6pu" path="res://scripts/breakable_obstacle.gd" id="1_mhxvd"]
+[ext_resource type="Texture2D" uid="uid://c1gct6bn7wrjg" path="res://sprites/crate.png" id="2_07bem"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsb26"]
+size = Vector2(28, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3luq"]
+size = Vector2(34, 34)
+
+[node name="BreakableObstacle" type="Node2D" unique_id=1446642707]
+script = ExtResource("1_mhxvd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=940002864]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=523533723]
+texture = ExtResource("2_07bem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=220881980]
+shape = SubResource("RectangleShape2D_vsb26")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D" unique_id=873331831]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D" unique_id=1136875423]
+shape = SubResource("RectangleShape2D_t3luq")
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
