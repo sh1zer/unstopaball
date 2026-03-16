@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bjjsjgph4w65y"]
+
+[ext_resource type="PackedScene" uid="uid://d08scvk1kdb4e" path="res://player.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://d3dgimcbk5iwk" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cfblkhemswhd0" path="res://walls.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://qxpsdnscnat2" path="res://obstacles.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bjo0yyl7pd55k" path="res://hud.tscn" id="5_lquwl"]
+
+[node name="Main" type="Node" unique_id=369137097]
+script = ExtResource("1_h2yge")
+
+[node name="Player" parent="." unique_id=1776616794 instance=ExtResource("1_0xm2m")]
+position = Vector2(313, 133)
+platform_wall_layers = 1
+
+[node name="StartPosition" type="Marker2D" parent="." unique_id=1755211270]
+
+[node name="Walls" parent="." unique_id=689964589 instance=ExtResource("2_h2yge")]
+
+[node name="Obstacles" parent="." unique_id=1479409469 instance=ExtResource("4_1bvp3")]
+
+[node name="HUD" parent="." unique_id=1230368555 instance=ExtResource("5_lquwl")]

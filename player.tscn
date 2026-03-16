@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d08scvk1kdb4e"]
+
+[ext_resource type="Script" uid="uid://7vdd1pm3flji" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://blhp3ya3ofolb" path="res://icon.svg" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://bc47b8h3unag8" path="res://art/explosion.jpg" id="3_i3pqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 33.24154
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i3pqv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i3pqv")
+}],
+"loop": false,
+"name": &"poof",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1776616794]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_4flbx")
+initial_speed = 50.0
+metadata/_edit_group_ = true
+
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1051850009]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_onrkg")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=1085259311]
+shape = SubResource("CircleShape2D_onrkg")
+
+[node name="Rope" type="Line2D" parent="." unique_id=487045737]
+width = 5.0
+default_color = Color(0.37622404, 0.12968826, 0.044883177, 1)
+
+[node name="BoostPoof" type="AnimatedSprite2D" parent="." unique_id=825869364]
+visible = false
+scale = Vector2(0.05051021, 0.04744898)
+sprite_frames = SubResource("SpriteFrames_i3pqv")
+animation = &"poof"
+
+[connection signal="animation_finished" from="BoostPoof" to="." method="_on_boost_poof_animation_finished"]
