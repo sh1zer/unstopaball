@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bdwxw8vueldxx"]
+
+[ext_resource type="Script" uid="uid://crr333dew2hua" path="res://scripts/boostpad.gd" id="1_7iqoc"]
+[ext_resource type="Texture2D" uid="uid://d3qvxd3usw0yw" path="res://sprites/arrow.jpg" id="1_j6pf2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7iqoc"]
+
+[node name="Boostpad" type="Area2D" unique_id=2026117677]
+scale = Vector2(2, 2)
+script = ExtResource("1_7iqoc")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1753954238]
+position = Vector2(-5.9604645e-08, 1.0579824e-06)
+rotation = 1.5707964
+scale = Vector2(0.020408163, 0.020408165)
+texture = ExtResource("1_j6pf2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1706610984]
+shape = SubResource("RectangleShape2D_7iqoc")

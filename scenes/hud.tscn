@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bjo0yyl7pd55k"]
+
+[ext_resource type="Script" uid="uid://duv1hbxbn386t" path="res://scripts/hud.gd" id="1_37p78"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1230368555]
+script = ExtResource("1_37p78")
+
+[node name="SpeedLabel" type="Label" parent="." unique_id=370529554]
+offset_left = 855.0
+offset_top = 24.0
+offset_right = 931.0
+offset_bottom = 69.0
