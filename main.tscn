@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cfblkhemswhd0" path="res://walls.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://qxpsdnscnat2" path="res://obstacles.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bjo0yyl7pd55k" path="res://hud.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://d2v0cj1tfbil1" path="res://ennemy.tscn" id="6_7mycd"]
 
 [node name="Main" type="Node" unique_id=369137097]
 script = ExtResource("1_h2yge")
@@ -20,3 +21,6 @@ platform_wall_layers = 1
 [node name="Obstacles" parent="." unique_id=1479409469 instance=ExtResource("4_1bvp3")]
 
 [node name="HUD" parent="." unique_id=1230368555 instance=ExtResource("5_lquwl")]
+
+[node name="Ennemy" parent="." unique_id=1061452709 instance=ExtResource("6_7mycd")]
+position = Vector2(238, 478)
