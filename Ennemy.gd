@@ -42,6 +42,8 @@ func _ready() -> void:
 func _acquire_target() -> bool:
 	if target == null or not is_instance_valid(target):
 		target = get_tree().get_first_node_in_group("player") as Node2D
+		if target == null:
+			target = get_tree().current_scene.get_node_or_null("Player") as Node2D
 	return target != null
 
 

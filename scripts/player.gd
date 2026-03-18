@@ -25,6 +25,7 @@ func start(pos: Vector2) -> void:
 
 
 func _ready() -> void:
+	add_to_group("player")
 	current_velocity = Vector2(1, -1).normalized() * initial_speed
 	$Rope.add_point(Vector2.ZERO)
 	$Rope.add_point(Vector2.ZERO)
