@@ -23,16 +23,16 @@ shape = SubResource("CircleShape2D_qcbvg")
 debug_color = Color(1.2032688e-06, 0.6407019, 0.35063767, 0.41960785)
 
 [node name="Boostpad" parent="." unique_id=2026117677 instance=ExtResource("1_car6s")]
-position = Vector2(150, 278)
+position = Vector2(230, 494)
 
 [node name="Boostpad3" parent="." unique_id=1592012818 instance=ExtResource("1_car6s")]
-position = Vector2(677.99994, 432)
+position = Vector2(905, 284.99997)
 rotation = -1.3089969
 
 [node name="Boostpad4" parent="." unique_id=2036635952 instance=ExtResource("1_car6s")]
-position = Vector2(744, 126)
+position = Vector2(815, 52.99997)
 rotation = -2.6179938
 
 [node name="Boostpad2" parent="." unique_id=1362242010 instance=ExtResource("1_car6s")]
-position = Vector2(465, 232)
+position = Vector2(269, 55.00003)
 rotation = -3.1101768
