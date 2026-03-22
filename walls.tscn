@@ -29,3 +29,13 @@ shape = SubResource("RectangleShape2D_jt0p1")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1560514460]
 position = Vector2(1921.25, 529.5)
 shape = SubResource("RectangleShape2D_ftpcs")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1432939644]
+polygon = PackedVector2Array(1901, 131, 1435, 361, 1436, 650, 1903, 942)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=1304690188]
+polygon = PackedVector2Array(363, 1077, 361, 597, 601, 597, 599, 1077)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="." unique_id=163347594]
+position = Vector2(6, -604)
+polygon = PackedVector2Array(361, 958, 361, 597, 601, 597, 599, 958)

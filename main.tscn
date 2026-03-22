@@ -3,9 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://d08scvk1kdb4e" path="res://player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://d3dgimcbk5iwk" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cfblkhemswhd0" path="res://walls.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://qxpsdnscnat2" path="res://obstacles.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bjo0yyl7pd55k" path="res://hud.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://ghftnbmi5omd" path="res://grapple_point.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bdwxw8vueldxx" path="res://scenes/boostpad.tscn" id="6_272bh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qcbvg"]
+radius = 24.5153
 
 [node name="Main" type="Node" unique_id=369137097]
 script = ExtResource("1_h2yge")
@@ -13,17 +16,117 @@ script = ExtResource("1_h2yge")
 [node name="Player" parent="." unique_id=1776616794 instance=ExtResource("1_0xm2m")]
 position = Vector2(313, 133)
 platform_wall_layers = 1
+max_speed = 700.0
 
 [node name="StartPosition" type="Marker2D" parent="." unique_id=1755211270]
 
 [node name="Walls" parent="." unique_id=689964589 instance=ExtResource("2_h2yge")]
 
-[node name="Obstacles" parent="." unique_id=1479409469 instance=ExtResource("4_1bvp3")]
-
 [node name="HUD" parent="." unique_id=1230368555 instance=ExtResource("5_lquwl")]
 
-[node name="GrapplePoint" parent="." unique_id=855221367 instance=ExtResource("6_7mycd")]
-position = Vector2(442, 318)
+[node name="GrapplePoints" type="Node" parent="." unique_id=330743574]
 
-[node name="GrapplePoint2" parent="." unique_id=1315481357 instance=ExtResource("6_7mycd")]
-position = Vector2(813, 550)
+[node name="GrapplePoint" parent="GrapplePoints" unique_id=855221367 instance=ExtResource("6_7mycd")]
+position = Vector2(1438, 652)
+
+[node name="GrapplePoint6" parent="GrapplePoints" unique_id=1125094393 instance=ExtResource("6_7mycd")]
+position = Vector2(1438, 359)
+
+[node name="GrapplePoint2" parent="GrapplePoints" unique_id=1315481357 instance=ExtResource("6_7mycd")]
+position = Vector2(599, 598)
+
+[node name="GrapplePoint3" parent="GrapplePoints" unique_id=1501622529 instance=ExtResource("6_7mycd")]
+position = Vector2(364, 600)
+
+[node name="GrapplePoint4" parent="GrapplePoints" unique_id=1793907530 instance=ExtResource("6_7mycd")]
+position = Vector2(371, 350)
+
+[node name="GrapplePoint5" parent="GrapplePoints" unique_id=39660502 instance=ExtResource("6_7mycd")]
+position = Vector2(604, 354)
+
+[node name="GrapplePoint7" parent="GrapplePoints" unique_id=2004191079 instance=ExtResource("6_7mycd")]
+position = Vector2(1093, 566)
+
+[node name="GrapplePoint8" parent="GrapplePoints" unique_id=747742390 instance=ExtResource("6_7mycd")]
+position = Vector2(830, 389)
+
+[node name="Obstacles" type="StaticBody2D" parent="." unique_id=1424533219]
+
+[node name="Obstacle1" type="CollisionShape2D" parent="Obstacles" unique_id=36577508]
+position = Vector2(830, 389)
+shape = SubResource("CircleShape2D_qcbvg")
+debug_color = Color(1.2032688e-06, 0.6407019, 0.35063767, 0.41960785)
+
+[node name="Obstacle4" type="CollisionShape2D" parent="Obstacles" unique_id=1314882181]
+position = Vector2(1093, 566)
+shape = SubResource("CircleShape2D_qcbvg")
+debug_color = Color(1.2032688e-06, 0.6407019, 0.35063767, 0.41960785)
+
+[node name="Obstacle6" type="CollisionShape2D" parent="Obstacles" unique_id=1802855544]
+position = Vector2(828, 952)
+shape = SubResource("CircleShape2D_qcbvg")
+debug_color = Color(1.2032688e-06, 0.6407019, 0.35063767, 0.41960785)
+
+[node name="Obstacle8" type="CollisionShape2D" parent="Obstacles" unique_id=1898595907]
+position = Vector2(1095, 953)
+shape = SubResource("CircleShape2D_qcbvg")
+debug_color = Color(1.2032688e-06, 0.6407019, 0.35063767, 0.41960785)
+
+[node name="Obstacle9" type="CollisionShape2D" parent="Obstacles" unique_id=229920361]
+position = Vector2(827, 49)
+shape = SubResource("CircleShape2D_qcbvg")
+debug_color = Color(1.2032688e-06, 0.6407019, 0.35063767, 0.41960785)
+
+[node name="Obstacle11" type="CollisionShape2D" parent="Obstacles" unique_id=1068839732]
+position = Vector2(1089, 53)
+shape = SubResource("CircleShape2D_qcbvg")
+debug_color = Color(1.2032688e-06, 0.6407019, 0.35063767, 0.41960785)
+
+[node name="Boostpads" type="Node" parent="." unique_id=1624161298]
+
+[node name="Boostpad2" parent="Boostpads" unique_id=2026117677 instance=ExtResource("6_272bh")]
+position = Vector2(282, 856)
+rotation = 4.712389
+
+[node name="Boostpad8" parent="Boostpads" unique_id=1347823935 instance=ExtResource("6_272bh")]
+position = Vector2(685, 863)
+rotation = 4.712389
+
+[node name="Boostpad12" parent="Boostpads" unique_id=1481364574 instance=ExtResource("6_272bh")]
+position = Vector2(1281, 869)
+rotation = 4.712389
+
+[node name="Boostpad9" parent="Boostpads" unique_id=806152566 instance=ExtResource("6_272bh")]
+position = Vector2(110, 211)
+rotation = 4.712389
+
+[node name="Boostpad3" parent="Boostpads" unique_id=843290477 instance=ExtResource("6_272bh")]
+position = Vector2(483, 414)
+
+[node name="Boostpad6" parent="Boostpads" unique_id=560860950 instance=ExtResource("6_272bh")]
+position = Vector2(1814, 999)
+rotation = 3.1415927
+
+[node name="Boostpad11" parent="Boostpads" unique_id=1526974208 instance=ExtResource("6_272bh")]
+position = Vector2(483, 526)
+rotation = 3.1415927
+
+[node name="Boostpad7" parent="Boostpads" unique_id=1758939069 instance=ExtResource("6_272bh")]
+position = Vector2(1819, 78)
+rotation = 3.1415927
+
+[node name="Boostpad4" parent="Boostpads" unique_id=332283863 instance=ExtResource("6_272bh")]
+position = Vector2(694, 224)
+rotation = 1.5707964
+
+[node name="Boostpad13" parent="Boostpads" unique_id=967668720 instance=ExtResource("6_272bh")]
+position = Vector2(1302, 218)
+rotation = 1.5707964
+
+[node name="Boostpad10" parent="Boostpads" unique_id=1102570800 instance=ExtResource("6_272bh")]
+position = Vector2(113, 856)
+rotation = 1.5707964
+
+[node name="Boostpad5" parent="Boostpads" unique_id=108237379 instance=ExtResource("6_272bh")]
+position = Vector2(277, 212)
+rotation = 1.5707964
