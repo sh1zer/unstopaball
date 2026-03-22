@@ -15,6 +15,7 @@ var rope_length: float = 0.0
 @export var grapple_boost_enabled: bool = true
 @export var grapple_boost_multiplier: float = 1.02
 @export var grapple_boost_duration: float = 0.5
+@export var grapple_max_length: float = 500.0
 var _grapple_boost_timer: float = 0.0
 
 
@@ -57,15 +58,16 @@ func _handle_boost() -> void:
 	poof.play("poof")
 
 func _handle_grapple() -> void:
-	var direction := (get_global_mouse_position() - global_position).normalized()
-	var far_point := global_position + direction * 10000.0
 	var space = get_world_2d().direct_space_state
-	var query = PhysicsRayQueryParameters2D.create(global_position, far_point)
-	query.exclude = [self.get_rid()]
-	var result = space.intersect_ray(query)
-	if result:
+	var mouse_pos := get_global_mouse_position()
+	var query = PhysicsPointQueryParameters2D.new()
+	query.position = mouse_pos
+	query.collision_mask = 2
+	var results = space.intersect_point(query)
+	if results.size() > 0 and (mouse_pos - position).length() < grapple_max_length:
+		var result = results[0]
 		grapple_active = true
-		grapple_anchor = result.position
+		grapple_anchor = result.collider.global_position
 		rope_length = global_position.distance_to(grapple_anchor)
 		if grapple_boost_enabled:
 			_grapple_boost_timer = grapple_boost_duration
