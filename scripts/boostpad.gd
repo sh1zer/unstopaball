@@ -6,13 +6,10 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	
 func _on_body_entered(body: Node2D) -> void:
-	if body.name != "Player":
-		return
-	if body is CharacterBody2D:
+	if body is Player:
 		var direction_alignment = body.current_velocity.normalized().dot(transform.x)
 		if direction_alignment > 0:
-			body.current_velocity += transform.x * boost_force
-			body.current_velocity = body.current_velocity.limit_length(body.max_speed)
+			body.apply_booster_pad(transform.x * boost_force)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

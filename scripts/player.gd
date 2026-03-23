@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 @export var initial_speed: float = 5.0
 @export var max_speed: float = 500.0
 @export var boost_strength: float = 200.0
@@ -17,6 +17,11 @@ var rope_length: float = 0.0
 @export var grapple_boost_duration: float = 0.5
 @export var grapple_max_length: float = 500.0
 var _grapple_boost_timer: float = 0.0
+
+# Audio players
+@onready var collision_player: AudioStreamPlayer2D = $SoundPlayers/CollisionPlayer
+@onready var booster_pad_player: AudioStreamPlayer2D = $SoundPlayers/BoosterPadPlayer
+@onready var boost_player: AudioStreamPlayer2D = $SoundPlayers/BoostPlayer
 
 
 func start(pos: Vector2) -> void:
@@ -49,7 +54,7 @@ func _handle_boost() -> void:
 	else:
 		current_velocity = direction * 250
 	current_velocity = current_velocity.limit_length(max_speed)
-
+	boost_player.play()
 	var poof: AnimatedSprite2D = $BoostPoof.duplicate()
 	get_tree().current_scene.add_child(poof)
 	poof.global_position = global_position - direction * 20.0
@@ -106,11 +111,17 @@ func _process_movement(delta: float) -> void:
 
 	var collision_data = move_and_collide(current_velocity * delta)
 	if collision_data:
+		collision_player.play()
 		var collision_normal = collision_data.get_normal()
 		current_velocity = current_velocity.bounce(collision_normal)
 		current_velocity = current_velocity.limit_length(max_speed)
 		var remainder = collision_data.get_remainder()
 		move_and_collide(remainder.bounce(collision_normal))
+
+func apply_booster_pad(boost_force: Vector2):
+	booster_pad_player.play()
+	current_velocity += boost_force
+	current_velocity = current_velocity.limit_length(max_speed)
 
 func _on_boost_poof_animation_finished() -> void:
 	pass
