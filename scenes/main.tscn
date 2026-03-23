@@ -133,3 +133,4 @@ position = Vector2(277, 212)
 rotation = 1.5707964
 
 [node name="Ennemy" parent="." unique_id=1061452709 instance=ExtResource("7_o6xl0")]
+position = Vector2(238, 478)
