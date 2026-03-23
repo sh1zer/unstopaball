@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://bjjsjgph4w65y"]
+[gd_scene format=3 uid="uid://cr7lriqaa3118"]
 
-[ext_resource type="PackedScene" uid="uid://d08scvk1kdb4e" path="res://player.tscn" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://d3dgimcbk5iwk" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://cfblkhemswhd0" path="res://walls.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bjo0yyl7pd55k" path="res://hud.tscn" id="5_lquwl"]
-[ext_resource type="PackedScene" uid="uid://ghftnbmi5omd" path="res://grapple_point.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://d08scvk1kdb4e" path="res://scenes/player.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://d3dgimcbk5iwk" path="res://scripts/main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cfblkhemswhd0" path="res://scenes/walls.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bjo0yyl7pd55k" path="res://scenes/hud.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://ghftnbmi5omd" path="res://scenes/grapple_point.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bdwxw8vueldxx" path="res://scenes/boostpad.tscn" id="6_272bh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qcbvg"]
