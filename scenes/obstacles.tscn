@@ -1,33 +1,38 @@
 [gd_scene format=3 uid="uid://qxpsdnscnat2"]
 
-[ext_resource type="PackedScene" uid="uid://y0c31k2bpxhx" path="res://scenes/obstacle.tscn" id="1_b1ion"]
 [ext_resource type="PackedScene" uid="uid://bdwxw8vueldxx" path="res://scenes/boostpad.tscn" id="1_car6s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qcbvg"]
+radius = 24.5153
 
 [node name="Obstacles" type="StaticBody2D" unique_id=1479409469]
 
-[node name="Obstacle1" parent="." unique_id=2125737538 instance=ExtResource("1_b1ion")]
-position = Vector2(653, 196)
-scale = Vector2(1.5, 1.5)
+[node name="Obstacle1" type="CollisionShape2D" parent="." unique_id=62636053]
+position = Vector2(269, 178)
+shape = SubResource("CircleShape2D_qcbvg")
+debug_color = Color(1.2032688e-06, 0.6407019, 0.35063767, 0.41960785)
+
+[node name="Obstacle2" type="CollisionShape2D" parent="." unique_id=1995071533]
+position = Vector2(724, 548)
+shape = SubResource("CircleShape2D_qcbvg")
+debug_color = Color(1.2032688e-06, 0.6407019, 0.35063767, 0.41960785)
+
+[node name="Obstacle3" type="CollisionShape2D" parent="." unique_id=229535808]
+position = Vector2(1117, 558)
+shape = SubResource("CircleShape2D_qcbvg")
+debug_color = Color(1.2032688e-06, 0.6407019, 0.35063767, 0.41960785)
 
 [node name="Boostpad" parent="." unique_id=2026117677 instance=ExtResource("1_car6s")]
-position = Vector2(150, 278)
+position = Vector2(230, 494)
 
 [node name="Boostpad3" parent="." unique_id=1592012818 instance=ExtResource("1_car6s")]
-position = Vector2(677.99994, 432)
+position = Vector2(905, 284.99997)
 rotation = -1.3089969
 
 [node name="Boostpad4" parent="." unique_id=2036635952 instance=ExtResource("1_car6s")]
-position = Vector2(744, 126)
+position = Vector2(815, 52.99997)
 rotation = -2.6179938
 
 [node name="Boostpad2" parent="." unique_id=1362242010 instance=ExtResource("1_car6s")]
-position = Vector2(465, 232)
+position = Vector2(269, 55.00003)
 rotation = -3.1101768
-
-[node name="Obstacle2" parent="." unique_id=1281660020 instance=ExtResource("1_b1ion")]
-position = Vector2(418, 427)
-scale = Vector2(1.5, 1.5)
-
-[node name="Obstacle3" parent="." unique_id=1446895815 instance=ExtResource("1_b1ion")]
-position = Vector2(273, 182)
-scale = Vector2(1.5, 1.5)

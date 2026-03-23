@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d08scvk1kdb4e"]
 
 [ext_resource type="Script" uid="uid://7vdd1pm3flji" path="res://scripts/player.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://blhp3ya3ofolb" path="res://sprites/icon.svg" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://blhp3ya3ofolb" path="res://icon.svg" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bc47b8h3unag8" path="res://sprites/explosion.jpg" id="3_i3pqv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
