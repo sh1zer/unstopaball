@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d2v0cj1tfbil1"]
 
-[ext_resource type="Script" uid="uid://djh2big8y0ruv" path="res://Ennemy.gd" id="1_8dqw5"]
+[ext_resource type="Script" uid="uid://djh2big8y0ruv" path="res://scripts/Ennemy.gd" id="1_8dqw5"]
 [ext_resource type="Texture2D" uid="uid://blhp3ya3ofolb" path="res://icon.svg" id="1_12j10"]
-[ext_resource type="PackedScene" path="res://enemy_bullet.tscn" id="3_enemy_bullet"]
+[ext_resource type="PackedScene" path="res://scenes/enemy_bullet.tscn" id="3_enemy_bullet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dqw5"]
 size = Vector2(37.375, 33.625)
